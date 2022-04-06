@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Antoine Gallix</title>
+    <meta name="description" content="What a brilliant lad" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
+    <style>:root {
+  /* Colors */
+  --primaryColor: #212529;
+  --secondaryColor: #95a5a6;
+  --accentColor: #f1c40f;
+  --linkColor: #2ecc71;
+  --mutedColor: #f4f6f6;
+
+  /* Typography */
+  --ratio: 1.25;
+  --scale0: 1rem;
+  --scale1: calc(var(--scale0) * var(--ratio));
+  --scale2: calc(var(--scale1) * var(--ratio));
+  --scale3: calc(var(--scale2) * var(--ratio));
+  --scale4: calc(var(--scale3) * var(--ratio));
+  --scale5: calc(var(--scale4) * var(--ratio));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  color: var(--primaryColor);
+  display: grid;
+  font: 1em/1.5 Lato, sans-serif;
+  gap: 2em;
+  grid-template-columns:
+    [full-start]
+    1fr
+    [main-start side-start]
+    minmax(min-content, 12em)
+    [side-end content-start]
+    minmax(min-content, 36em)
+    [main-end content-end]
+    1fr
+    [full-end];
+  grid-template-rows: auto [content] 0;
+  margin-bottom: 4em;
+}
+
+body::before {
+  content: '';
+  grid-column: full;
+  grid-row: content;
+}
+
+ol,
+ul {
+  padding-left: 1em;
+}
+
+li + li {
+  margin-top: 0.2em;
+}
+
+li::marker {
+  color: var(--mutedColor);
+}
+
+a {
+  color: var(--linkColor);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:focus,
+a:hover {
+  color: var(--accentColor);
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--scale5);
+}
+
+h2 {
+  color: var(--secondaryColor);
+  font-size: var(--scale4);
+}
+
+h3 {
+  color: var(--accentColor);
+  font-size: var(--scale3);
+  grid-column: side;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: var(--scale2);
+}
+
+h5 {
+  font-size: var(--scale1);
+}
+
+h6 {
+  font-size: var(--scale0);
+}
+
+blockquote {
+  border-left: 0.2em solid var(--mutedColor);
+  padding-left: 1em;
+}
+
+cite {
+  color: var(--secondaryColor);
+  font-style: inherit;
+}
+
+cite::before {
+  content: '— ';
+}
+
+.masthead {
+  background: var(--mutedColor);
+  display: inherit;
+  gap: inherit;
+  grid-column: full;
+  grid-template-columns: inherit;
+  padding: 4em 0;
+  row-gap: 0;
+}
+
+.masthead > *,
+section {
+  grid-column: main;
+}
+
+article > * + *,
+blockquote > * + * {
+  margin-top: 0.6em;
+}
+
+.stack {
+  display: grid;
+  gap: 1.5em;
+}
+
+.grid-list {
+  display: grid;
+  gap: 1em;
+}
+
+.spaced-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spaced-list:first-child::before {
+  border-bottom: 1px solid var(--mutedColor);
+  content: '';
+  flex-grow: 1;
+  margin: 0 1em;
+  order: 1;
+}
+
+.spaced-list > :nth-child(2) {
+  order: 2;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.tag-list > li {
+  background: var(--mutedColor);
+  margin: 0 0.2em 0.2em 0;
+  padding: 0.2em 0.6em;
+}
+
+@media print, (min-width: 48em) {
+  h3 {
+    text-align: right;
+    margin-bottom: inherit;
+  }
+
+  .masthead > *,
+  section {
+    grid-column: content;
+  }
+
+  section {
+    display: contents;
+  }
+
+  .grid-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+  </head>
+  <body>
+      <header class="masthead">
+          <h1>Antoine Gallix</h1>
+          <h2>Python Web Development and Data Analysis</h2>
+      </header>
+      <section id="contact">
+        <h3>Contact</h3>
+        <div class="grid-list">
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:antoine@antoine-gallix.me">antoine@antoine-gallix.me</a>
+            </div>
+            <div>
+              <h4>Website</h4>
+              <a href="http://www.antoine-gallix.me">www.antoine-gallix.me</a>
+            </div>
+        </div>
+      </section>
+        <section id="about">
+          <h3>About</h3>
+          <article>
+            <p>What a brilliant lad</p>
+          </article>
+        </section>
+        <section id="profiles">
+          <h3>Profiles</h3>
+          <div class="grid-list">
+              <div>
+                  <h4>LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/ACoAAA8HLIEBxoJyw9k1p-TBuOpccOUZwsSOmNU/">Antoine Gallix</a>
+              </div>
+          </div>
+        </section>
+
+      <section id="work">
+        <h3>Work</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Infarm</h4>
+                  <span>
+                    <time datetime="2019-09">Sep 2019</time> –
+                    <time datetime="2021-01">Jan 2021</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Cloud and Data Engineer</strong>
+                    <a href="https://www.infarm.com">www.infarm.com</a>
+                </div>
+              </header>
+                <p>I provided support for deploying machine learning algorithms in production by developing and maintaining a library of tools and framework for the data science team. The main working environment was Google Cloud Platform. Monitoring and predictive algorithms were packed in Docker containers and integrated with the rest of Infarm logistic and remote control platform with the database and process communication tools of GCP.</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Develop and maintain a library of functions and CLI tools to integrate with the databases</li>
+                    <li>Design a framework to deploy the algorithms in containers</li>
+                    <li>Schedule, operate and monitor the data solutions</li>
+                    <li>Tech Stack: Python, Pandas, Google Cloud Platform, Docker, SQL</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Infarm</h4>
+                  <span>
+                    <time datetime="2018-04">Apr 2018</time> –
+                    <time datetime="2019-09">Sep 2019</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Backend Developer</strong>
+                    <a href="https://www.infarm.com">www.infarm.com</a>
+                </div>
+              </header>
+                <p>Infarm is an indoor farming company that was in rapid growth, with a rapidly evolving operation model. The software team developed an internal application to coordinate the seeding, transplanting and harvesting operation on the company's distributed growing machine network. I was in charge of the backend part of the logistic service.</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Designing and planning data model evolution</li>
+                    <li>Developping and coordinating new features with the frontend team.</li>
+                    <li>Maintenance, Bug Fixing</li>
+                    <li>Tech Stack: Python, Flask, Postgresql, Heroku, Github</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>CeleraOne, now Smart Steel Technologies</h4>
+                  <span>
+                    <time datetime="2017-02">Feb 2017</time> –
+                    <time datetime="2017-08">Aug 2017</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Machine Learning Engineer</strong>
+                    <a href="https://www.smart-steel-technologies.com">www.smart-steel-technologies.com</a>
+                </div>
+              </header>
+                <p>CeleraOne started a new branch of business, that uses machine learning technologies to detect defects in the steel production industry. A new team was gathered and a pilot project was run for half a year.</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Exploratory analysis of the dataset</li>
+                    <li>Researching, implementing and evaluating different approaches</li>
+                    <li>Complex data processing, development of a common toolbox for research</li>
+                    <li>Tech Stack: Python, Pandas, Matplotlib, SciKitLearn</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>CeleraOne, now Piano</h4>
+                  <span>
+                    <time datetime="2016-04">Apr 2016</time> –
+                    <time datetime="2017-02">Feb 2017</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Backend Web Developer</strong>
+                    <a href="https://piano.io/">piano.io</a>
+                </div>
+              </header>
+                <p>CeleraOne provided services for online publishing industry; various types of content access metrics and paywall functionalities. I was part of a team developing and maintaining the backend of the web application used by customers to configure the system.</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Development and maintenance of a backend and REST API</li>
+                    <li>Promoted good clean code practice, refactoring and documentation of a codebase with a heavy technical debt.</li>
+                    <li>Tech Stack: Python, Pyramid, Colander, MongoDB, Buildout, Git</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Predictive Farming</h4>
+                  <span>
+                    <time datetime="2015-06">Jun 2015</time> –
+                    <time datetime="2015-11">Nov 2015</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Backend Application Developer</strong>
+                    <a href=""></a>
+                </div>
+              </header>
+                <p>In an early stage startup, I started building the backend of a web application that manages agricultural data.</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Tech Stack: Python, Eve, Flask, MongoDB</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>DxO Labs</h4>
+                  <span>
+                    <time datetime="2013-08">Aug 2013</time> –
+                    <time datetime="2014-04">Apr 2014</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Image Processing Engineer</strong>
+                    <a href="https://www.dxo.com/">www.dxo.com</a>
+                </div>
+              </header>
+                <p>One of the products of DxO is image processing algorithms, that work on-chip on smartphones, to create the image from raw sensor data in real time. I worked on a comparative study of various algorithms on one of the steps of the image pipelinen.</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Tech Stack: Python, C++, Mercurial</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>University of Granada</h4>
+                  <span>
+                    <time datetime="2011-04">Apr 2011</time> –
+                    <time datetime="2012-03">Mar 2012</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Master Thesis Student Researcher</strong>
+                    <a href="http://sipba.ugr.es/">sipba.ugr.es</a>
+                </div>
+              </header>
+                <p>Master Thesis Project. Application of image decomposition and machine learning techniques to classification of 3D brain scanner images</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Publication of the research in a peer reviewed journal</li>
+                </ul>
+            </article>
+        </div>
+      </section>
+      <section id="education">
+        <h3>Education</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>ETSIIT of Granada, Spain</h4>
+                  <span>
+                    <time datetime="2010">Jan 2010</time> –
+                    <time datetime="2011">Jan 2011</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Signal and Image Processing</strong>
+                </div>
+              </header>
+                <p>Second Year of Master Studies in Signal and Image processing</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Université de Rennes 1</h4>
+                  <span>
+                    <time datetime="2009">Jan 2009</time> –
+                    <time datetime="2010">Jan 2010</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Electronics and Telecommunications</strong>
+                </div>
+              </header>
+                <p>First Year of Master's Degree</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>INSA de Rennes</h4>
+                  <span>
+                    <time datetime="2006">Jan 2006</time> –
+                    <time datetime="2009">Jan 2009</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>General Engineering, specialized in Electronics and Telecommunications. First Four Years</strong>
+                </div>
+              </header>
+                
+            </article>
+        </div>
+      </section>
+      <section id="publications">
+        <h3>Publications</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>On The Empirical Mode Decomposition Applied to the Analysis of Brain SPECT Images</h4>
+                    <time datetime="2012-06-10">Jun 2012</time>
+                </div>
+                <div class="spaced-list">
+                    <span>
+                      Published by <strong>Expert Systems with Applications</strong>
+                    </span>
+                    <a href="http://www.ugr.es/~javierrp/pdf_papers/ESWA2012c.pdf">www.ugr.es/~javierrp/pdf_papers/ESWA2012c.pdf</a>
+                </div>
+              </header>
+                <p>The subject of the study is automatic classification of brain SPECT images, in the case of Alzheimer disease. In this paper a new step of frequency decomposition ( Empirical Mode Decomposition ) is applied to an existing classification algorithm that leads to an improvement of the results.</p>
+            </article>
+        </div>
+      </section>
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid-list">
+            <div>
+                <h4>Python</h4>
+                <ul class="tag-list">
+                    <li>Web Frameworks</li>
+                    <li>Data Processing</li>
+                    <li>Visualization</li>
+                    <li>CLI Tools</li>
+                    <li>ORMs</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Google Cloud Platform</h4>
+                <ul class="tag-list">
+                    <li>Big Query</li>
+                    <li>Cloud Functions</li>
+                    <li>Scheduler</li>
+                    <li>Permissions</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Machine Learning</h4>
+            </div>
+            <div>
+                <h4>Data Science</h4>
+                <ul class="tag-list">
+                    <li>data cleaning</li>
+                    <li>visualization</li>
+                    <li>analysis</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Git</h4>
+            </div>
+        </div>
+      </section>
+      <section id="languages">
+        <h3>Languages</h3>
+        <div class="grid-list">
+            <div>
+                <h4>English</h4>
+              Fluent
+            </div>
+            <div>
+                <h4>French</h4>
+              Native speaker
+            </div>
+            <div>
+                <h4>Spanish</h4>
+              Fluent
+            </div>
+            <div>
+                <h4>Portuguese</h4>
+              Fluent
+            </div>
+            <div>
+                <h4>Italian</h4>
+              Fluent
+            </div>
+            <div>
+                <h4>German</h4>
+              Good enough use at work
+            </div>
+        </div>
+      </section>
+      <section id="references">
+        <h3>References</h3>
+        <div class="stack">
+              <blockquote>
+                <p>Who are you? Stop following me. I'm not recommending you to anything, I don't even know who you are. Who let you in my office?</p>
+                  <p>
+                    <cite>Elon Musk</cite>
+                  </p>
+              </blockquote>
+              <blockquote>
+                <p>My Antoine is the most beautiful boy. I just wish he would visit his parents more often. Food there in the north must be so terrible. Do they even have olive oil in Germany?</p>
+                  <p>
+                    <cite>Antoine&#x27;s mum</cite>
+                  </p>
+              </blockquote>
+        </div>
+      </section>
+  </body>
+</html>
